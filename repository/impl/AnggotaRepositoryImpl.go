@@ -21,3 +21,12 @@ func (d *database) FindAll() ([]domain.Anggota, error) {
 	}
 	return anggota, nil
 }
+func (d *database) FindOne(Id int) (domain.Anggota, error) {
+	var anggota domain.Anggota
+	err := d.db.Where("id=?", Id).Find(&anggota).Error
+	if err != nil {
+		return anggota, err
+	}
+	return anggota, nil
+
+}

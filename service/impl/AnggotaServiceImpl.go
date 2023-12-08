@@ -20,3 +20,10 @@ func (r *anggotaRepository) FindAllAnggota() ([]domain.Anggota, error) {
 	}
 	return anggota, nil
 }
+func (r *anggotaRepository) FindOneAnggota(Id int) (domain.Anggota, error) {
+	anggota, err := r.repository.FindOne(Id)
+	if err != nil {
+		return anggota, err
+	}
+	return anggota, nil
+}

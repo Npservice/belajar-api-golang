@@ -30,6 +30,7 @@ func NewRoute(r *Route) *gin.Engine {
 	route.DELETE("/buku/destroy/:id", r.BukuController.DeleteBuku)
 
 	route.GET("/anggota", r.AnggotaController.FindAllAnggota)
+	route.GET("/anggota/:id", r.AnggotaController.FindOneAnggota)
 
 	return route
 }
