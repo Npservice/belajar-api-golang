@@ -22,10 +22,15 @@ func main() {
 	AnggotaService := ServiceImpl.NewAnggotaService(AnggotaRepository)
 	Anggota := ControllerImpl.NewAnggotaController(AnggotaService)
 
+	PeminjamanRepository := RepositoryImpl.NewPeminjamanRepository(db)
+	PeminjamanServie := ServiceImpl.NewPeminjamanService(PeminjamanRepository)
+	Peminjaman := ControllerImpl.NewPeminjamanController(PeminjamanServie)
+
 	r := &app.Route{
 		User,
 		Buku,
 		Anggota,
+		Peminjaman,
 	}
 	route := app.NewRoute(r)
 
