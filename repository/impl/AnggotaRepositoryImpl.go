@@ -30,3 +30,11 @@ func (d *database) FindOne(Id int) (domain.Anggota, error) {
 	return anggota, nil
 
 }
+
+func (d *database) Creat(anggota domain.Anggota) (domain.Anggota, error) {
+	err := d.db.Create(anggota).Error
+	if err != nil {
+		return anggota, err
+	}
+	return anggota, nil
+}
