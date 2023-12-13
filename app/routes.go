@@ -7,9 +7,10 @@ import (
 )
 
 type Route struct {
-	UserController    controller.UserController
-	BukuController    controller.BukuController
-	AnggotaController controller.AnggotaController
+	UserController       controller.UserController
+	BukuController       controller.BukuController
+	AnggotaController    controller.AnggotaController
+	PeminjamanController controller.PeminjamanController
 }
 
 func NewRoute(r *Route) *gin.Engine {
@@ -31,6 +32,8 @@ func NewRoute(r *Route) *gin.Engine {
 
 	route.GET("/anggota", r.AnggotaController.FindAllAnggota)
 	route.GET("/anggota/:id", r.AnggotaController.FindOneAnggota)
+
+	route.GET("/peminjaman", r.PeminjamanController.PeminjamanFindALl)
 
 	return route
 }
