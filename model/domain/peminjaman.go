@@ -5,9 +5,11 @@ import (
 )
 
 type Peminjaman struct {
-	IDPeminjaman        int
-	IdAnggota           Anggota
-	IdBuku              Buku
+	ID                  int
+	AnggotaID           int
+	Anggota             Anggota
+	BukuID              int
+	Buku                Buku
 	TanggalPeminjaman   time.Time
 	TanggalPengembalian time.Time
 }
